@@ -1,0 +1,45 @@
+services:
+  user:
+    build:
+      context: .
+      dockerfile: user/Dockerfile.users
+    ports:
+      - "9000:5000"
+    networks:
+      - aggarw86
+  products:
+    build:
+      context: ./products
+      dockerfile: Dockerfile.products
+    ports:
+      - "9001:5000"
+    networks:
+      - aggarw86
+  search:
+    build:
+      context: ./search
+      dockerfile: Dockerfile.search
+    ports:
+      - "9002:5000"
+    networks:
+      - aggarw86
+  orders:
+    build:
+      context: ./orders
+      dockerfile: Dockerfile.order
+    ports:
+      - "9003:5000"
+    networks:
+      - aggarw86
+  logs:
+    build:
+      context: ./logs
+      dockerfile: Dockerfile.logs
+    ports:
+      - "9004:5000"
+    networks:
+      - aggarw86
+
+networks:
+  aggarw86:
+    driver: bridge

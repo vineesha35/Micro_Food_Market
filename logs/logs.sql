@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS logs;
+
+CREATE TABLE logs (
+    row_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    event TEXT NOT NULL,
+    username TEXT NOT NULL,
+    name TEXT
+);
